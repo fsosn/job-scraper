@@ -21,13 +21,21 @@ This section provides step-by-step instructions on how to set up the project loc
    ```sh
    git clone https://github.com/fsosn/job-scraper.git
    ```
-2. Create .env file in the directory and set up environmental variables
+2. Create a virtual environment and install dependencies
+
    ```sh
-   APP_EMAIL="example.email@gmail.com"
-   PASSWORD="password"
-   MY_EMAIL="your.email@gmail.com"
+   python -m venv .venv
+   .venv/Scripts/activate
+   pip install -r requirements.txt
    ```
-3. Run the program
+
+3. Create .env file in the root directory and set up environmental variables
+   ```sh
+   FROM_EMAIL="example.email@gmail.com"
+   PASSWORD="password"
+   TO_EMAIL="your.email@gmail.com"
+   ```
+4. Run the program
    ```sh
    python main.py
    ```
