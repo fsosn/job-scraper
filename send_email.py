@@ -1,5 +1,5 @@
 import smtplib
-from config import APP_EMAIL, PASSWORD, MY_EMAIL
+from config import FROM_EMAIL, PASSWORD, TO_EMAIL
 from pretty_html_table import build_table
 import pandas as pd
 
@@ -14,5 +14,5 @@ def send_email(report: pd.DataFrame):
 
     with smtplib.SMTP("smtp.gmail.com", 587) as connection:
         connection.starttls()
-        connection.login(user=APP_EMAIL, password=PASSWORD)
-        connection.sendmail(from_addr=APP_EMAIL, to_addrs=MY_EMAIL, msg=message)
+        connection.login(user=FROM_EMAIL, password=PASSWORD)
+        connection.sendmail(from_addr=FROM_EMAIL, to_addrs=TO_EMAIL, msg=message)
