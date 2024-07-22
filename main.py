@@ -1,4 +1,4 @@
-from scrapers import pracujpl_scraper
+from scrapers import pracujpl_scraper, indeed_scraper
 from send_email import send_email
 import logging
 import sys
@@ -13,9 +13,10 @@ logging.basicConfig(
 def main():
     logging.info("Starting job scraping.")
     try:
-        job_df = pracujpl_scraper.scrape()
+        pracujpl_job_df = pracujpl_scraper.scrape()
+        indeed_job_df = indeed_scraper.scrape()
         logging.info("Job scraping completed.")
-        send_email(job_df)
+        send_email(pracujpl_job_df, indeed_job_df)
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         sys.exit(1)
