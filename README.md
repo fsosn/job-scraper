@@ -8,6 +8,7 @@ This project is a Python-based web scraper designed to automate job searches bas
 
 - Python
 - BeautifulSoup
+- Selenium
 - pandas
 - requests
 
@@ -39,3 +40,7 @@ This section provides step-by-step instructions on how to set up the project loc
    ```sh
    python main.py
    ```
+
+## Example Job Report Email
+
+![Example email screenshot](./docs/example_job_report_email.png)
